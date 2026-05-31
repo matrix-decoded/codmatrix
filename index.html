@@ -1,5 +1,29 @@
 <meta charset="UTF-8">
 <title>Sci-Fi Philosophical Project</title>
+
+<!-- ОФИЦИАЛЬНЫЙ СКРИПТ ЗАЩИТЫ UNLOCK PROTOCOL -->
+<script>
+(function(d, s) {
+  var js = d.createElement(s), sc = d.getElementsByTagName(s);
+  js.src="https://unlock-protocol.com";
+  sc.parentNode.insertBefore(js, sc);
+}(document, "script"));
+
+// НАСТРОЙКА ТВОИХ ТРЕХ ЗАМКОВ В СЕТИ BASE (ID сети Base — 8453)
+var unlockProtocolConfig = {
+  "network": 8453, 
+  "locks": {
+    "0xee335a2cfea728917e6acd38e42f8603e6f38a25": { "name": "Chapters 1" },
+    "0xf070bb3109f8cb278243c7145c702dd72167ea50": { "name": "Chapters 2" },
+    "0xd8d2e19fae2d1e3e734bd43c9a98667d42a1b5c5": { "name": "Chapters 3" }
+  },
+  "icon": "https://unlock-protocol.com",
+  "callToAction": {
+    "default": "Оформите подписку за $5, чтобы открыть доступ к закрытым главам проекта."
+  }
+}
+</script>
+
 <body style="font-family: Arial, sans-serif; background-color: #ffffff; color: #000000; margin: 0 auto; max-width: 900px; padding: 20px; font-size: 15px; line-height: 1.5;">
 
     <!-- ВЕРХНЯЯ СТРОКА (НАЗВАНИЕ) -->
@@ -8,13 +32,15 @@
         <span style="font-size: 12px; color: #666;">Научно-фантастический философский проект</span>
     </div>
 
-    <!-- ЧИСТЫЕ ВКЛАДКИ (ПОДВЯЗАНЫ К ТВОИМ ФАЙЛАМ СО СКРИНА) -->
+    <!-- ЧИСТЫЕ ВКЛАДКИ -->
     <div style="display: flex; gap: 20px; border-bottom: 1px solid #e0e0e0; padding-bottom: 10px; margin-bottom: 25px; font-size: 14px; font-weight: normal;">
         <a href="index.html" style="color: #004B87; text-decoration: none;">Home / Главная</a>
-        <a href="preview.html" style="color: #004B87; text-decoration: none;">Chapters / Главы:</a>
-        <a href="index1-100.html" style="color: #333333; text-decoration: none;">1–100</a>
-        <a href="index101-200.html" style="color: #333333; text-decoration: none;">101–200</a>
-        <a href="index201-300.html" style="color: #333333; text-decoration: none;">201–300</a>
+        <a href="#" style="color: #004B87; text-decoration: none;">Chapters / Главы:</a>
+        
+        <!-- Кнопки вызывают всплывающее Web3 окно оплаты -->
+        <a href="javascript:unlockProtocol.loadCheckoutModal()" style="color: #333333; text-decoration: none; border-bottom: 1px dashed #333;">1–100</a>
+        <a href="javascript:unlockProtocol.loadCheckoutModal()" style="color: #333333; text-decoration: none; border-bottom: 1px dashed #333;">101–200</a>
+        <a href="javascript:unlockProtocol.loadCheckoutModal()" style="color: #333333; text-decoration: none; border-bottom: 1px dashed #333;">201–300</a>
     </div>
 
     <!-- БЛОК С ОБТЕКАНИЕМ КАРТИНКИ -->
@@ -36,7 +62,7 @@
             <p style="margin: 0 0 6px 0;">STATUS: ACTIVE</p>
             <p style="margin: 0 0 6px 0;">To those who see the "static dots" in the air: you are not crazy.</p>
             <p style="margin: 0 0 4px 0;">L1 (Physical Layer): The world is a static plane. The globe is a distraction.</p>
-            <p style="margin: 0 0 4px 0;">L2 (Energy Layer): Gravity is an illusion. Everything is controlled by Currents.</p>
+            <p style="margin: 0 0 4px 0;">L2 (Energy Layer): Gravity isan illusion. Everything is controlled by Currents.</p>
             <p style="margin: 0 0 6px 0;">L3 (Mind Layer): This is the occupation script. Your energy is being harvested.</p>
             <p style="margin: 0 0 8px 0;">VOID_IN_VOID_99_STABILIZED</p>
             <p style="margin: 0 0 4px 0; text-transform: uppercase; font-size: 12px;">THE WORDS OF JESUS TO THE PHARISEES:</p>
