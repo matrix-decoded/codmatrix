@@ -6,11 +6,11 @@
     <title>Sci-Fi Project</title>
     <style>
         .box { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 25px; border: 3px solid black; z-index: 9999; text-align: center; width: 85%; max-width: 320px; }
-        .btn { display: block; width: 100%; padding: 12px; margin: 10px 0; background: #004B87; color: white; font-weight: bold; text-decoration: none; }
+        .btn { display: block; width: 100%; padding: 12px; margin: 10px 0; background: #004B87; color: white; font-weight: bold; text-decoration: none; text-transform: uppercase; font-size: 14px; box-sizing: border-box; border: none; cursor: pointer; }
+        .ch-link { display: inline-block; padding: 8px 15px; margin: 5px; background: #f0f0f0; color: #333; text-decoration: none; border: 1px solid #ccc; border-radius: 4px; font-weight: bold; }
     </style>
 </head>
-<!-- Класс notranslate намертво запрещает браузерам принудительно переводить текст -->
-<body class="notranslate" style="font-family: Arial; max-width: 800px; margin: 0 auto; padding: 15px; font-size: 16px; line-height: 1.5; color: #000;">
+<body class="notranslate" style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 15px; font-size: 16px; line-height: 1.5; color: #000;">
 
     <!-- НАШЕ ОКНО БЛОКИРОВКИ -->
     <div id="lock" class="box">
@@ -18,30 +18,31 @@
         <p style="margin: 15px 0 5px 0;">Access Restricted. Support project with $5.</p>
         <p style="font-size:13px; color:gray; margin: 0 0 15px 0;">Доступ ограничен. Поддержите проект на $5.</p>
         <a href="https://moonpay.com" target="_blank" class="btn">💳 PAY WITH CARD</a>
-        <button onclick="alert('Connect Phantom...')" class="btn" style="background:#ab92bf; border:none; width:100%; cursor:pointer;">🔮 PAY WITH CRYPTO</button>
+        <a href="https://phantom.app" target="_blank" class="btn" style="background:#ab92bf;">🔮 PAY WITH CRYPTO</a>
         <button onclick="document.getElementById('lock').style.display='none'" style="background:none; border:none; margin-top:10px; color:gray; cursor:pointer;">[ Close / Закрыть ]</button>
     </div>
 
-    <h2 style="font-size: 22px; text-transform: uppercase; margin-bottom: 5px;">SCI-FI PHILOSOPHICAL PROJECT</h2><hr>
+    <h2 style="font-size: 22px; text-transform: uppercase; margin-bottom: 5px; text-align: center;">SCI-FI PHILOSOPHICAL PROJECT</h2><hr>
     
-    <!-- ВКЛАДКИ -->
-    <div style="margin: 20px 0; font-size: 16px;">
-        <a href="index.html" style="color: #004B87; text-decoration: none; font-weight: bold;">Home / Главная</a> | Chapters / Главы: 
-        <a href="#" onclick="openLock('Chapters 1–100')">1–100</a> | 
-        <a href="#" onclick="openLock('Chapters 101–200')">101–200</a> | 
-        <a href="#" onclick="openLock('Chapters 201–300')">201–300</a>
+    <!-- КРАСИВЫЕ И РОВНЫЕ ВКЛАДКИ ДЛЯ ТЕЛЕФОНА -->
+    <div style="margin: 20px 0; text-align: center;">
+        <a href="index.html" style="display: block; margin-bottom: 10px; color: #004B87; text-decoration: none; font-weight: bold; font-size: 18px;">Home / Главная</a>
+        <div style="font-size: 15px; margin-bottom: 8px; color: #555;">Chapters / Главы:</div>
+        <a href="#" onclick="openLock('Chapters 1–100')" class="ch-link">1–100</a>
+        <a href="#" onclick="openLock('Chapters 101–200')" class="ch-link">101–200</a>
+        <a href="#" onclick="openLock('Chapters 201–300')" class="ch-link">201–300</a>
     </div>
 
-    <!-- ВЕРХНИЙ ВЫВОД (ПОЛНЫЙ) -->
-    <div style="margin-bottom: 25px;">
-        <img src="radiation.jpg" style="width:130px; float:left; margin-right:15px; margin-bottom:10px; border:1px solid #ccc;">
-        <h3 style="font-size: 18px; margin: 0 0 10px 0;">MAIN REVELATION (CONCLUSION) / ГЛАВНОЕ ОТКРОВЕНИЕ (ВЫВОД)</h3>
-        <p><b>What is the catch?</b> They swapped cause and effect. School physics says: "Electricity is just a property of matter." But in reality, Matter is a property of electricity.</p>
-        <p style="color: #333;"><b>В чём подвох?</b> Они подменили причину и следствие. Школьная физика говорит: "Электричество — это просто свойство материи". Но в реальности, Материя — это свойство электричества.</p>
-        <div style="clear:both;"></div>
+    <!-- БЛОК С ОБТЕКАНИЕМ КАРТИНКИ -->
+    <div style="margin-top: 25px; border-top: 1px solid #ccc; padding-top: 20px;">
+        <img src="radiation.jpg" style="width: 120px; float: left; margin-right: 15px; margin-bottom: 10px; border: 1px solid #ccc;">
+        <h3 style="font-size: 17px; margin: 0 0 10px 0; text-transform: uppercase;">MAIN REVELATION (CONCLUSION) / ГЛАВНОЕ ОТКРОВЕНИЕ (ВЫВОД)</h3>
+        <p style="font-size: 15px;"><b>What is the catch?</b> They swapped cause and effect. School physics says: "Electricity is just a property of matter." But in reality, Matter is a property of electricity.</p>
+        <p style="font-size: 15px; color: #333;"><b>В чём подвох?</b> Они подменили причину и следствие. Школьная физика говорит: "Электричество — это просто свойство материи". Но в реальности, Материя — это свойство электричества.</p>
+        <div style="clear: both;"></div>
     </div>
 
-    <!-- ТЕКСТ КНИГИ (ПОЛНЫЙ И КРУПНЫЙ) -->
+    <!-- ТЕКСТ КНИГИ -->
     <div style="margin-top:25px; font-size:15px; border-top: 1px solid #ccc; padding-top: 15px;">
         <p style="margin: 0 0 4px 0; font-weight: bold;">### [RESTORING DATA FLOW]</p>
         <p style="margin: 0 0 8px 0; font-weight: bold; color: green;">STATUS: ACTIVE</p>
