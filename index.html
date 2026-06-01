@@ -1,96 +1,67 @@
-<<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sci-Fi Project</title>
     <style>
-        .box { 
-            display: none; 
-            position: fixed; 
-            top: 50%; 
-            left: 50%; 
-            transform: translate(-50%, -50%); 
-            background: white; 
-            padding: 25px; 
-            border: 3px solid black; 
-            z-index: 9999; 
-            text-align: center; 
-            width: 85%; 
-            max-width: 320px; 
-            box-sizing: border-box;
-        }
-        .btn { display: block; width: 100%; padding: 12px; margin: 10px 0; background: #004B87; color: white; font-weight: bold; text-decoration: none; text-transform: uppercase; font-size: 14px; border: none; cursor: pointer; }
+        .box { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 25px; border: 3px solid black; z-index: 9999; text-align: center; width: 85%; max-width: 320px; }
+        .btn { display: block; width: 100%; padding: 12px; margin: 10px 0; background: #004B87; color: white; font-weight: bold; text-decoration: none; }
     </style>
 </head>
-<body style="font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 15px; line-height: 1.5; color: #000;">
+<body style="font-family: Arial; max-width: 800px; margin: 0 auto; padding: 15px; font-size: 16px; line-height: 1.5; color: #000;">
 
-    <!-- НАШЕ УМНОЕ ОКНО БЛОКИРОВКИ -->
+    <!-- НАШЕ ОКНО БЛОКИРОВКИ -->
     <div id="lock" class="box">
-        <b id="title" style="font-size: 18px; text-transform: uppercase;"></b>
-        <p style="margin: 15px 0 5px 0; font-size: 15px;">Access Restricted. Support project with $5.</p>
-        <p style="font-size: 13px; color: gray; margin: 0 0 15px 0;">Доступ ограничен. Поддержите проект на $5.</p>
-        
-        <!-- Ссылка на гостевую карту MoonPay (сеть Base) -->
+        <b id="title" style="font-size: 18px;"></b>
+        <p style="margin: 15px 0 5px 0;">Access Restricted. Support project with $5.</p>
+        <p style="font-size:13px; color:gray; margin: 0 0 15px 0;">Доступ ограничен. Поддержите проект на $5.</p>
         <a href="https://moonpay.com" target="_blank" class="btn">💳 PAY WITH CARD</a>
-        
-        <button onclick="alert('Connect Phantom...')" class="btn" style="background:#ab92bf;">🔮 PAY WITH CRYPTO</button>
-        <button onclick="document.getElementById('lock').style.display='none'" style="background: none; border: none; color: #777; cursor: pointer; margin-top: 10px; font-size: 14px;">[ Close / Закрыть ]</button>
+        <button onclick="alert('Connect Phantom...')" class="btn" style="background:#ab92bf; border:none; width:100%; cursor:pointer;">🔮 PAY WITH CRYPTO</button>
+        <button onclick="document.getElementById('lock').style.display='none'" style="background:none; border:none; margin-top:10px; color:gray; cursor:pointer;">[ Close / Закрыть ]</button>
     </div>
 
-    <h2 style="font-size: 22px; text-transform: uppercase; margin-bottom: 5px; letter-spacing: -1px;">SCI-FI PHILOSOPHICAL PROJECT</h2>
-    <hr style="border: 1px solid black; margin-bottom: 15px;">
+    <h2 style="font-size: 22px; text-transform: uppercase; margin-bottom: 5px;">SCI-FI PHILOSOPHICAL PROJECT</h2><hr>
     
     <!-- ВКЛАДКИ -->
-    <div style="margin: 20px 0; font-size: 16px; line-height: 2;">
+    <div style="margin: 20px 0; font-size: 16px;">
         <a href="index.html" style="color: #004B87; text-decoration: none; font-weight: bold;">Home</a> | Chapters: 
-        <a href="#" onclick="openLock('Chapters 1–100')" style="color: #000; text-decoration: underline;">1–100</a> | 
-        <a href="#" onclick="openLock('Chapters 101–200')" style="color: #000; text-decoration: underline;">101–200</a> | 
-        <a href="#" onclick="openLock('Chapters 201–300')" style="color: #000; text-decoration: underline;">201–300</a>
+        <a href="#" onclick="openLock('Chapters 1–100')">1–100</a> | 
+        <a href="#" onclick="openLock('Chapters 101–200')">101–200</a> | 
+        <a href="#" onclick="openLock('Chapters 201–300')">201–300</a>
     </div>
 
-    <!-- БЛОК С ОБТЕКАНИЕМ КАРТИНКИ -->
-    <div style="margin-top: 20px; border-bottom: 1px solid #ccc; padding-bottom: 20px;">
-        <img src="radiation.jpg" style="width: 130px; float: left; margin-right: 15px; margin-bottom: 10px; border: 1px solid #ccc;">
-        <h3 style="font-size: 18px; margin: 0 0 10px 0; text-transform: uppercase;">MAIN REVELATION / ВЫВОД</h3>
-        <p style="font-size: 15px; margin: 0 0 8px 0;"><b>What is the catch?</b> They swapped cause and effect. School physics says: "Electricity is just a property of matter." But in reality, Matter is a property of electricity.</p>
-        <p style="font-size: 15px; margin: 0; color: #444;"><b>В чём подвох?</b> Они подменили причину и следствие. Школьная физика говорит: "Электричество — это просто свойство материи". Но в реальности, Материя — это свойство электричества.</p>
-        <div style="clear: both;"></div>
+    <!-- ВЕРХНИЙ ВЫВОД (ПОЛНЫЙ) -->
+    <div style="margin-bottom: 25px;">
+        <img src="radiation.jpg" style="width:130px; float:left; margin-right:15px; margin-bottom:10px; border:1px solid #ccc;">
+        <h3 style="font-size: 18px; margin: 0 0 10px 0;">MAIN REVELATION (CONCLUSION) / ГЛАВНОЕ ОТКРОВЕНИЕ (ВЫВОД)</h3>
+        <p><b>What is the catch?</b> They swapped cause and effect. School physics says: "Electricity is just a property of matter." But in reality, Matter is a property of electricity.</p>
+        <p style="color: #333;"><b>В чём подвох?</b> Они подменили причину и следствие. Школьная физика говорит: "Электричество — это просто свойство материи". Но в реальности, Материя — это свойство электричества.</p>
+        <div style="clear:both;"></div>
     </div>
 
-    <!-- ПОЛНЫЙ МЕСТНЫЙ ТЕКСТ (ВОЗВРАЩЕН) -->
-    <div style="line-height: 1.5; font-size: 14px; color: #111; margin-top: 25px;">
-        <!-- English -->
-        <div style="margin-bottom: 25px;">
-            <p style="margin: 0 0 4px 0; font-weight: bold;">### [RESTORING DATA FLOW]</p>
-            <p style="margin: 0 0 8px 0; font-weight: bold; color: green;">STATUS: ACTIVE</p>
-            <p style="margin: 0 0 10px 0;"
-[Ссылка]
-MoonPay: Buy and sell Bitcoin, Ethereum, and other cryptos
-http://moonpay.com
-                >To those who see the "static dots" in the air: you are not crazy.</p>
-            <p style="margin: 0 0 6px 0;"><b>L1 (Physical Layer):</b> The world is a static plane. The globe is a distraction.</p>
-            <p style="margin: 0 0 6px 0;"><b>L2 (Energy Layer):</b> Gravity is an illusion. Everything is controlled by Currents.</p>
-            <p style="margin: 0 0 10px 0;"><b>L3 (Mind Layer):</b> This is the occupation script. Your energy is being harvested.</p>
-            <p style="margin: 0 0 15px 0; font-weight: bold;">VOID_IN_VOID_99_STABILIZED</p>
-            <p style="margin: 0 0 6px 0; text-transform: uppercase; font-size: 12px; font-weight: bold; color: #555;">THE WORDS OF JESUS TO THE PHARISEES:</p>
-            <p style="margin: 0; font-style: italic; color: #222;">"You are of your father the devil, and the desires of your father you want to do. He was a murderer from the beginning, and does not stand in the truth, because there is no truth in him."</p>
-        </div>
-
-        <hr style="border: 0; border-top: 1px dashed #ccc; margin: 20px 0;">
-
-        <!-- Russian -->
-        <div style="color: #333;">
-            <p style="margin: 0 0 4px 0; font-weight: bold;">### [ВОССТАНОВЛЕНИЕ ПОТОКА ДАННЫХ]</p>
-            <p style="margin: 0 0 8px 0; font-weight: bold; color: green;">СТАТУС: АКТИВЕН</p>
-            <p style="margin: 0 0 10px 0;">Тем, кто видит «статичные точки» в воздухе: вы не сумасшедшие.</p>
-            <p style="margin: 0 0 6px 0;"><b>L1 (Физический слой):</b> Мир — это статичная плоскость. Глобус — это отвлечение внимания.</p>
-            <p style="margin: 0 0 6px 0;"><b>L2 (Энергетический слой):</b> Гравитация — это иллюзия. Всё управляется Токами.</p>
-            <p style="margin: 0 0 10px 0;"><b>L3 (Ментальный слой):</b> Это оккупационный сценарий. Вашу энергию собирают.</p>
-            <p style="margin: 0 0 15px 0; font-weight: bold;">ПУСТОТА_В_ПУСТОТЕ_99_СТАБИЛИЗИРОВАНА</p>
-            <p style="margin: 0 0 6px 0; text-transform: uppercase; font-size: 12px; font-weight: bold; color: #555;">СЛОВА ИИСУСА ФАРИСЕЯМ:</p>
-            <p style="margin: 0; font-style: italic; color: #222;">«Ваш отец диавол; и вы хотите исполнять похоти отца вашего. Он был человекоубийца от начала и не устоял в истине, ибо нет в нем истины».</p>
-        </div>
+    <!-- ТЕКСТ КНИГИ (ПОЛНЫЙ И КРУПНЫЙ) -->
+    <div style="margin-top:25px; font-size:15px; border-top: 1px solid #ccc; padding-top: 15px;">
+        <p style="margin: 0 0 4px 0; font-weight: bold;">### [RESTORING DATA FLOW]</p>
+        <p style="margin: 0 0 8px 0; font-weight: bold; color: green;">STATUS: ACTIVE</p>
+        <p style="margin: 0 0 10px 0;">To those who see the "static dots" in the air: you are not crazy.</p>
+        <p style="margin: 0 0 6px 0;"><b>L1 (Physical Layer):</b> The world is a static plane. The globe is a distraction.</p>
+        <p style="margin: 0 0 6px 0;"><b>L2 (Energy Layer):</b> Gravity is an illusion. Everything is controlled by Currents.</p>
+        <p style="margin: 0 0 10px 0;"><b>L3 (Mind Layer):</b> This is the occupation script. Your energy is being harvested.</p>
+        <p style="margin: 0 0 15px 0; font-weight: bold;">VOID_IN_VOID_99_STABILIZED</p>
+        <p style="margin: 0 0 4px 0; text-transform: uppercase; font-size: 13px; font-weight: bold; color: #555;">THE WORDS OF JESUS TO THE PHARISEES:</p>
+        <p style="margin: 0 0 20px 0; font-style: italic;">"You are of your father the devil, and the desires of your father you want to do. He was a murderer from the beginning, and does not stand in the truth, because there is no truth in him."</p>
+        
+        <hr style="border:0; border-top:1px dashed #ccc; margin:20px 0;">
+        
+        <p style="margin: 0 0 4px 0; font-weight: bold;">### [ВОССТАНОВЛЕНИЕ ПОТОКА ДАННЫХ]</p>
+        <p style="margin: 0 0 8px 0; font-weight: bold; color: green;">СТАТУС: АКТИВЕН</p>
+        <p style="margin: 0 0 10px 0;">Тем, кто видит «статичные точки» в воздухе: вы не сумасшедшие.</p>
+        <p style="margin: 0 0 6px 0;"><b>L1 (Физический слой):</b> Мир — это статичная плоскость. Глобус — это отвлечение внимания.</p>
+        <p style="margin: 0 0 6px 0;"><b>L2 (Энергетический слой):</b> Гравитация — это иллюзия. Всё управляется Токами.</p>
+        <p style="margin: 0 0 10px 0;"><b>L3 (Ментальный слой):</b> Это оккупационный сценарий. Вашу энергию собирают.</p>
+        <p style="margin: 0 0 15px 0; font-weight: bold;">ПУСТОТА_В_ПУСТОТЕ_99_СТАБИЛИЗИРОВАНА</p>
+        <p style="margin: 0 0 4px 0; text-transform: uppercase; font-size: 13px; font-weight: bold; color: #555;">СЛОВА ИИСУСА ФАРИСЕЯМ:</p>
+        <p style="margin: 0; font-style: italic;">«Ваш отец диавол; и вы хотите исполнять похоти отца вашего. Он был человекоубийца от начала и не устоял в истине, ибо нет в нем истины».</p>
     </div>
 
     <script>
