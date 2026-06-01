@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sci-Fi Project</title>
     <style>
-        .box { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 25px; border: 3px solid black; z-index: 9999; text-align: center; width: 85%; max-width: 320px; }
-        .btn { display: block; width: 100%; padding: 12px; margin: 10px 0; background: #004B87; color: white; font-weight: bold; text-decoration: none; text-transform: uppercase; font-size: 14px; box-sizing: border-box; border: none; cursor: pointer; }
-        .ch-link { display: inline-block; padding: 8px 15px; margin: 5px; background: #f0f0f0; color: #333; text-decoration: none; border: 1px solid #ccc; border-radius: 4px; font-weight: bold; }
+        /* Окно защиты по центру экрана */
+        .box { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 25px; border: 3px solid black; z-index: 9999; text-align: center; width: 85%; max-width: 320px; box-sizing: border-box; }
+        .btn { display: block; width: 100%; padding: 12px; margin: 10px 0; background: #004B87; color: white; font-weight: bold; text-decoration: none; text-transform: uppercase; font-size: 14px; box-sizing: border-box; }
     </style>
 </head>
-<body class="notranslate" style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 15px; font-size: 16px; line-height: 1.5; color: #000;">
+<body class="notranslate" style="font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 15px; font-size: 16px; line-height: 1.5; color: #000;">
 
     <!-- НАШЕ ОКНО БЛОКИРОВКИ -->
     <div id="lock" class="box">
@@ -22,15 +22,20 @@
         <button onclick="document.getElementById('lock').style.display='none'" style="background:none; border:none; margin-top:10px; color:gray; cursor:pointer;">[ Close / Закрыть ]</button>
     </div>
 
-    <h2 style="font-size: 22px; text-transform: uppercase; margin-bottom: 5px; text-align: center;">SCI-FI PHILOSOPHICAL PROJECT</h2><hr>
+    <!-- ВЕРХНЯЯ СТРОКА (НАЗВАНИЕ НА ДВУХ ЯЗЫКАХ) -->
+    <div style="border-bottom: 2px solid #000000; padding-bottom: 10px; margin-bottom: 15px;">
+        <h2 style="font-weight: 900; font-size: 22px; text-transform: uppercase; letter-spacing: -1px; margin: 0 0 5px 0;">Sci-Fi Philosophical Project</h2>
+        <div style="font-size: 13px; color: #555; text-transform: uppercase; font-weight: bold;">Научно-фантастический философский проект</div>
+    </div>
     
-    <!-- КРАСИВЫЕ И РОВНЫЕ ВКЛАДКИ ДЛЯ ТЕЛЕФОНА -->
-    <div style="margin: 20px 0; text-align: center;">
-        <a href="index.html" style="display: block; margin-bottom: 10px; color: #004B87; text-decoration: none; font-weight: bold; font-size: 18px;">Home / Главная</a>
-        <div style="font-size: 15px; margin-bottom: 8px; color: #555;">Chapters / Главы:</div>
-        <a href="#" onclick="openLock('Chapters 1–100')" class="ch-link">1–100</a>
-        <a href="#" onclick="openLock('Chapters 101–200')" class="ch-link">101–200</a>
-        <a href="#" onclick="openLock('Chapters 201–300')" class="ch-link">201–300</a>
+    <!-- СТРОГИЕ ССЫЛКИ КАК В ОБРАЗЦЕ -->
+    <div style="margin: 20px 0; font-size: 16px; line-height: 1.8;">
+        <a href="index.html" style="color: #004B87; text-decoration: none; font-weight: bold;">Home / Главная</a>
+        <div style="margin-top: 5px; color: #444;">Chapters / Главы: 
+            <a href="#" onclick="openLock('Chapters 1–100')" style="color: #004B87; text-decoration: underline; margin-left: 5px;">1–100</a> | 
+            <a href="#" onclick="openLock('Chapters 101–200')" style="color: #004B87; text-decoration: underline;">101–200</a> | 
+            <a href="#" onclick="openLock('Chapters 201–300')" style="color: #004B87; text-decoration: underline;">201–300</a>
+        </div>
     </div>
 
     <!-- БЛОК С ОБТЕКАНИЕМ КАРТИНКИ -->
