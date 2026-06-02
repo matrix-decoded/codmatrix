@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sci-Fi Project</title>
-    <script src="https://cloudflare.com"></script>
     <style>
         .lock-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 9999; }
         .box { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 25px; border: 3px solid black; text-align: center; width: 85%; max-width: 340px; box-sizing: border-box; }
         .btn { display: block; width: 100%; padding: 12px; margin: 10px 0; background: #004B87; color: white; font-weight: bold; text-decoration: none; text-transform: uppercase; font-size: 14px; box-sizing: border-box; border: none; cursor: pointer; }
-        .qr-area { display: none; margin: 15px 0; padding: 10px; border: 1px dashed #ccc; background: #fafafa; font-size: 12px; word-break: break-all; }
+        .qr-area { display: none; margin: 15px 0; padding: 10px; border: 1px dashed #ccc; background: #fafafa; font-size: 13px; }
         .qr-center { display: flex; justify-content: center; margin: 10px 0; }
         .wallet-market { margin-top: 15px; border-top: 1px solid #eee; padding-top: 10px; font-size: 12px; color: #555; }
         .wallet-market a { color: #004B87; text-decoration: underline; font-weight: bold; }
@@ -18,7 +17,6 @@
 </head>
 <body class="notranslate" style="font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 15px; font-size: 16px; line-height: 1.5; color: #000;">
 
-    <!-- ЗАШИЩЕННЫЙ КЛИКАБЕЛЬНЫЙ ФОН И ОКНО -->
     <div id="lock-bg" class="lock-overlay" onclick="closeAll(event)">
         <div class="box" onclick="event.stopPropagation()">
             <button class="close-x" onclick="closeButton()">×</button>
@@ -28,13 +26,17 @@
             
             <button onclick="toggleCardQR()" class="btn">💳 PAY WITH CARD</button>
             <div id="qr-card-block" class="qr-area">
-                <div id="qrcode-card" class="qr-center"></div>
+                <div class="qr-center">
+                    <img id="qrcode-card" src="" style="width:150px; height:150px;" alt="QR Card">
+                </div>
                 Scan with Phone Camera to pay $5 instantly via <b>Apple Pay, Google Pay</b> or Card.
             </div>
 
             <button onclick="toggleCryptoQR()" class="btn" style="background:#ab92bf; width:100%;">🔮 PAY WITH CRYPTO</button>
             <div id="qr-crypto-block" class="qr-area">
-                <div id="qrcode-crypto" class="qr-center"></div>
+                <div class="qr-center">
+                    <img id="qrcode-crypto" src="" style="width:150px; height:150px;" alt="QR Crypto">
+                </div>
                 Scan with Phantom, MetaMask or Trust Wallet to send 5 USDC.<br>
                 <small style="color:gray;">Address: 0xee335a2cfea728917e6acd38e42f8603e6f38a25</small>
             </div>
@@ -68,28 +70,15 @@
         <div style="clear: both;"></div>
     </div>
 
-    <div style="margin-top:25px; font-size:15px; border-top: 1px solid #ccc; padding-top: 15px;">
-        <p style="margin: 0 0 4px 0; font-weight: bold;">### [RESTORING DATA FLOW]</p>
-        <p style="margin: 0 0 8px 0; font-weight: bold; color: green;">STATUS: ACTIVE</p>
-        <p style="margin: 0 0 10px 0;">To those who see the "static dots" in the air: you are not crazy.</p>
-        <p style="margin: 0 0 6px 0;"><b>L1 (Physical Layer):</b> The world is a static plane. The globe is a distraction.</p>
-        <p style="margin: 0 0 6px 0;"><b>L2 (Energy Layer):</b> Gravity is an illusion. Everything is controlled by Currents.</p>
-        <p style="margin: 0 0 10px 0;"><b>L3 (Mind Layer):</b> This is the occupation script. Your energy is being harvested.</p>
-        <p style="margin: 0 0 15px 0; font-weight: bold;">VOID_IN_VOID_99_STABILIZED</p>
-        <p style="margin: 0 0 4px 0; text-transform: uppercase; font-size: 13px; font-weight: bold; color: #555;">THE WORDS OF JESUS TO THE PHARISEES:</p>
-        <p style="margin: 0 0 20px 0; font-style: italic;">"You are of your father the devil, and the desires of your father you want to do. He was a murderer from the beginning, and does not stand in the truth, because there is no truth in him."</p>
+    <!-- ТУТ ОСТАЛАСЬ ТОЛЬКО СТРОГАЯ ЦИТАТА ИИСУСА НА ДВУХ ЯЗЫКАХ -->
+    <div style="margin-top:25px; font-size:16px; border-top: 1px solid #ccc; padding-top: 15px; line-height: 1.6;">
+        <p style="margin: 0 0 6px 0; text-transform: uppercase; font-size: 13px; font-weight: bold; color: #555;">THE WORDS OF JESUS TO THE PHARISEES:</p>
+        <p style="margin: 0 0 25px 0; font-style: italic; color: #111;">"You are of your father the devil, and the desires of your father you want to do. He was a murderer from the beginning, and does not stand in the truth, because there is no truth in him."</p>
         
         <hr style="border:0; border-top:1px dashed #ccc; margin:20px 0;">
         
-        <p style="margin: 0 0 4px 0; font-weight: bold;">### [ВОССТАНОВЛЕНИЕ ПОТОКА ДАННЫХ]</p>
-        <p style="margin: 0 0 8px 0; font-weight: bold; color: green;">СТАТУС: АКТИВЕН</p>
-        <p style="margin: 0 0 10px 0;">Тем, кто видит «статичные точки» в воздухе: вы не сумасшедшие.</p>
-        <p style="margin: 0 0 6px 0;"><b>L1 (Физический слой):</b> Мир — это статичная плоскость. Глобус — это отвлечение внимания.</p>
-        <p style="margin: 0 0 6px 0;"><b>L2 (Энергетический слой):</b> Гравитация — это иллюзия. Всё управляется Токами.</p>
-        <p style="margin: 0 0 10px 0;"><b>L3 (Ментальный слой):</b> Это оккупационный сценарий. Вашу энергию собирают.</p>
-        <p style="margin: 0 0 15px 0; font-weight: bold;">ПУСТОТА_В_ПУСТОТЕ_99_СТАБИЛИЗИРОВАНА</p>
-        <p style="margin: 0 0 4px 0; text-transform: uppercase; font-size: 13px; font-weight: bold; color: #555;">СЛОВА ИИСУСА ФАРИСЕЯМ:</p>
-        <p style="margin: 0; font-style: italic;">«Ваш отец диавол; и вы хотите исполнять похоти отца вашего. Он был человекоубийца от начала и не устоял в истине, ибо нет в нем истины».</p>
+        <p style="margin: 0 0 6px 0; text-transform: uppercase; font-size: 13px; font-weight: bold; color: #555;">СЛОВА ИИСУСА ФАРИСЕЯМ:</p>
+        <p style="margin: 0; font-style: italic; color: #111;">«Ваш отец диавол; и вы хотите исполнять похоти отца вашего. Он был человекоубийца от начала и не устоял в истине, ибо нет в нем истины».</p>
     </div>
 
     <script>
@@ -104,17 +93,16 @@
             var block = document.getElementById('qr-card-block');
             if (block.style.display === 'block') { block.style.display = 'none'; return; }
             closeAllQRs();
-            document.getElementById("qrcode-card").innerHTML = "";
             var cardUrl = "https://moonpay.com" + currentFile;
-            new QRCode(document.getElementById("qrcode-card"), { text: cardUrl, width: 150, height: 150 });
+            document.getElementById("qrcode-card").src = "https://qrserver.com" + encodeURIComponent(cardUrl);
             block.style.display = 'block';
         }
         function toggleCryptoQR() {
             var block = document.getElementById('qr-crypto-block');
             if (block.style.display === 'block') { block.style.display = 'none'; return; }
             closeAllQRs();
-            document.getElementById("qrcode-crypto").innerHTML = "";
-            new QRCode(document.getElementById("qrcode-crypto"), { text: "ethereum:0xee335a2cfea728917e6acd38e42f8603e6f38a25?value=0.002", width: 150, height: 150 });
+            var cryptoUrl = "ethereum:0xee335a2cfea728917e6acd38e42f8603e6f38a25?value=0.002";
+            document.getElementById("qrcode-crypto").src = "https://qrserver.com" + encodeURIComponent(cryptoUrl);
             block.style.display = 'block';
         }
         function closeAllQRs() {
