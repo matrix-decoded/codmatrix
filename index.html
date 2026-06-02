@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sci-Fi Project</title>
+    <!-- Встроенный неубиваемый генератор QR-кодов прямо в браузере -->
+    <script src="https://cloudflare.com"></script>
     <style>
         .lock-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 9999; }
         .box { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 25px; border: 3px solid black; text-align: center; width: 85%; max-width: 340px; box-sizing: border-box; }
@@ -26,17 +28,13 @@
             
             <button onclick="toggleCardQR()" class="btn">💳 PAY WITH CARD</button>
             <div id="qr-card-block" class="qr-area">
-                <div class="qr-center">
-                    <img id="qrcode-card" src="" style="width:150px; height:150px;" alt="QR Card">
-                </div>
-                Scan with Phone Camera to pay $5 instantly via <b>Apple Pay, Google Pay</b> or Card.
+                <div id="qrcode-card" class="qr-center"></div>
+                Scan with Phone Camera to pay $5 instantly via <b>Apple Pay, Google Pay</b> or Credit Card.
             </div>
 
             <button onclick="toggleCryptoQR()" class="btn" style="background:#ab92bf; width:100%;">🔮 PAY WITH CRYPTO</button>
             <div id="qr-crypto-block" class="qr-area">
-                <div class="qr-center">
-                    <img id="qrcode-crypto" src="" style="width:150px; height:150px;" alt="QR Crypto">
-                </div>
+                <div id="qrcode-crypto" class="qr-center"></div>
                 Scan with Phantom, MetaMask or Trust Wallet to send 5 USDC.<br>
                 <small style="color:gray;">Address: 0xee335a2cfea728917e6acd38e42f8603e6f38a25</small>
             </div>
@@ -70,7 +68,6 @@
         <div style="clear: both;"></div>
     </div>
 
-    <!-- ТУТ ОСТАЛАСЬ ТОЛЬКО СТРОГАЯ ЦИТАТА ИИСУСА НА ДВУХ ЯЗЫКАХ -->
     <div style="margin-top:25px; font-size:16px; border-top: 1px solid #ccc; padding-top: 15px; line-height: 1.6;">
         <p style="margin: 0 0 6px 0; text-transform: uppercase; font-size: 13px; font-weight: bold; color: #555;">THE WORDS OF JESUS TO THE PHARISEES:</p>
         <p style="margin: 0 0 25px 0; font-style: italic; color: #111;">"You are of your father the devil, and the desires of your father you want to do. He was a murderer from the beginning, and does not stand in the truth, because there is no truth in him."</p>
@@ -93,16 +90,22 @@
             var block = document.getElementById('qr-card-block');
             if (block.style.display === 'block') { block.style.display = 'none'; return; }
             closeAllQRs();
+            document.getElementById("qrcode-card").innerHTML = "";
             var cardUrl = "https://moonpay.com" + currentFile;
-            document.getElementById("qrcode-card").src = "https://qrserver.com" + encodeURIComponent(cardUrl);
+            
+            // Локальная генерация QR-кода для Apple Pay без внешних серверов
+            new QRCode(document.getElementById("qrcode-card"), { text: cardUrl, width: 150, height: 150 });
             block.style.display = 'block';
         }
         function toggleCryptoQR() {
             var block = document.getElementById('qr-crypto-block');
             if (block.style.display === 'block') { block.style.display = 'none'; return; }
             closeAllQRs();
+            document.getElementById("qrcode-crypto").innerHTML = "";
             var cryptoUrl = "ethereum:0xee335a2cfea728917e6acd38e42f8603e6f38a25?value=0.002";
-            document.getElementById("qrcode-crypto").src = "https://qrserver.com" + encodeURIComponent(cryptoUrl);
+            
+            // Локальная генерация QR-кода для крипты
+            new QRCode(document.getElementById("qrcode-crypto"), { text: cryptoUrl, width: 150, height: 150 });
             block.style.display = 'block';
         }
         function closeAllQRs() {
