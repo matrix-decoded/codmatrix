@@ -20,7 +20,7 @@
             <p style="margin: 15px 0 5px 0;">Access Restricted. Support project with $5.</p>
             <p style="font-size:13px; color:gray; margin: 0 0 15px 0;">Доступ ограничен. Поддержите проект на $5.</p>
             
-            <!-- Кнопки шлюзов -->
+            <!-- Две чистые зашитые ссылки -->
             <a id="link-card" href="#" target="_blank" class="btn">💳 PAY WITH CARD</a>
             <a id="link-crypto" href="#" target="_blank" class="btn" style="background:#ab92bf;">🔮 PAY WITH CRYPTO</a>
         </div>
@@ -31,14 +31,16 @@
         <h2 style="font-weight: 900; font-size: 22px; text-transform: uppercase; letter-spacing: -1px; margin: 0 0 5px 0;">Sci-Fi Philosophical Project</h2>
         <div style="font-size: 13px; color: #555; text-transform: uppercase; font-weight: bold;">Научно-фантастический философский проект</div>
     </div>
-        <!-- ССЫЛКИ ГЛАВ -->
+    
+    <!-- ССЫЛКИ ГЛАВ -->
     <div style="margin: 20px 0; font-size: 16px; line-height: 1.8;">
         <a href="index.html" style="color: #004B87; text-decoration: none; font-weight: bold;">Home / Главная</a>
         <div style="margin-top: 5px; color: #444;">Chapters / Главы: 
             <a href="index1-20.html" style="color: #004B87; text-decoration: underline; margin-left: 5px;">1–20</a> | 
-            <a href="#" onclick="openLock('Chapters 21–100', 'index21-100.html')" style="color: #004B87; text-decoration: underline;">21–100</a> | 
-            <a href="#" onclick="openLock('Chapters 101–200', 'index101-200.html')" style="color: #004B87; text-decoration: underline;">101–200</a> | 
-            <a href="#" onclick="openLock('Chapters 201–300', 'index201-300.html')" style="color: #004B87; text-decoration: underline;">201–300</a>
+            <!-- Каждая кнопка теперь передает свой точный зашитый URL MoonPay -->
+            <a href="#" onclick="openLock('Chapters 21–100', 'https://moonpay.com')" style="color: #004B87; text-decoration: underline;">21–100</a> | 
+            <a href="#" onclick="openLock('Chapters 101–200', 'https://moonpay.com')" style="color: #004B87; text-decoration: underline;">101–200</a> | 
+            <a href="#" onclick="openLock('Chapters 201–300', 'https://moonpay.com')" style="color: #004B87; text-decoration: underline;">201–300</a>
         </div>
     </div>
 
@@ -60,16 +62,15 @@
         <p style="margin: 0; font-style: italic; color: #111;">«Ваш отец диавол; и вы хотите исполнять похоти отца вашего. Он был человекоубийца от начала и не устоял в истине, ибо нет в нем истины».</p>
     </div>
 
-    <!-- НАШ СТУДИЙНЫЙ ОРИГИНАЛЬНЫЙ СКРИПТ -->
+    <!-- НАШ ОРИГИНАЛЬНЫЙ СКРИПТ (ТЕПЕРЬ ПОЛНОСТЬЮ РОВНЫЙ) -->
     <script>
-        function openLock(name, file) {
+        function openLock(name, fullUrl) {
             document.getElementById('lock-title').innerText = name;
             
-            // Ссылка для карт (MoonPay) — жестко привязывает файл возврата
-            var moonpayUrl = "https://moonpay.com" + file;
-            document.getElementById('link-card').href = moonpayUrl;
+            // Больше никаких автоматических склеек — кнопка берет готовый жесткий URL
+            document.getElementById('link-card').href = fullUrl;
             
-            // Временная заглушка для крипты (пока не сделаем архив) — ведет на главную, чтобы не было ошибки 404
+            // Временный адрес для крипты на твой Phantom
             document.getElementById('link-crypto').href = "https://phantom.app";
             
             document.getElementById('lock-bg').style.display = 'block';
