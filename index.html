@@ -4,27 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sci-Fi Project</title>
-    <style>
-        .lock-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 9999; }
-        .box { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 25px; border: 3px solid black; text-align: center; width: 85%; max-width: 320px; box-sizing: border-box; }
-        .btn { display: block; width: 100%; padding: 12px; margin: 10px 0; background: #004B87; color: white; font-weight: bold; text-decoration: none; text-transform: uppercase; font-size: 14px; box-sizing: border-box; border: none; text-align: center; cursor: pointer; }
-    </style>
 </head>
 <body class="notranslate" style="font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 15px; font-size: 16px; line-height: 1.5; color: #000;">
-
-    <!-- НАШЕ ОКНО БЛОКИРОВКИ -->
-    <div id="lock-bg" class="lock-overlay" onclick="closeAll(event)">
-        <div class="box" onclick="event.stopPropagation()">
-            <button style="position: absolute; top: 5px; right: 10px; font-size: 22px; background: none; border: none; color: #aaa; cursor: pointer; font-weight: bold;" onclick="closeButton()">×</button>
-            <b id="lock-title" style="font-size: 18px;"></b>
-            <p style="margin: 15px 0 5px 0;">Access Restricted. Support project with $5.</p>
-            <p style="font-size:13px; color:gray; margin: 0 0 15px 0;">Доступ ограничен. Поддержите проект на $5.</p>
-            
-            <!-- Исправленные прямые ссылки -->
-            <a id="link-card" href="#" target="_blank" class="btn">💳 PAY WITH CARD</a>
-            <a id="link-crypto" href="#" target="_blank" class="btn" style="background:#ab92bf;">🔮 PAY WITH CRYPTO</a>
-        </div>
-    </div>
 
     <!-- ВЕРХНЯЯ СТРОКА -->
     <div style="border-bottom: 2px solid #000000; padding-bottom: 10px; margin-bottom: 15px;">
@@ -32,14 +13,14 @@
         <div style="font-size: 13px; color: #555; text-transform: uppercase; font-weight: bold;">Научно-фантастический философский проект</div>
     </div>
     
-    <!-- ССЫЛКИ ГЛАВ -->
+    <!-- ССЫЛКИ ГЛАВ (ТЕПЕРЬ ВЕДУТ НА ОТДЕЛЬНЫЕ СТРАНИЦЫ ОПЛАТЫ) -->
     <div style="margin: 20px 0; font-size: 16px; line-height: 1.8;">
         <a href="index.html" style="color: #004B87; text-decoration: none; font-weight: bold;">Home / Главная</a>
         <div style="margin-top: 5px; color: #444;">Chapters / Главы: 
             <a href="index1-20.html" style="color: #004B87; text-decoration: underline; margin-left: 5px;">1–20</a> | 
-            <a href="#" onclick="openLock('Chapters 21–100', 'index21-100.html')" style="color: #004B87; text-decoration: underline;">21–100</a> | 
-            <a href="#" onclick="openLock('Chapters 101–200', 'index101-200.html')" style="color: #004B87; text-decoration: underline;">101–200</a> | 
-            <a href="#" onclick="openLock('Chapters 201–300', 'index201-300.html')" style="color: #004B87; text-decoration: underline;">201–300</a>
+            <a href="pay21-100.html" style="color: #004B87; text-decoration: underline;">21–100</a> | 
+            <a href="pay101-200.html" style="color: #004B87; text-decoration: underline;">101–200</a> | 
+            <a href="pay203-300.html" style="color: #004B87; text-decoration: underline;">201–300</a>
         </div>
     </div>
 
@@ -61,22 +42,5 @@
         <p style="margin: 0; font-style: italic; color: #111;">«Ваш отец диавол; и вы хотите исполнять похоти отца вашего. Он был человекоубийца от начала и не устоял в истине, ибо нет в нем истины».</p>
     </div>
 
-    <script>
-        function openLock(name, file) {
-            document.getElementById('lock-title').innerText = name;
-            
-            // Чистая прямая ссылка на MoonPay со всеми разделителями и слэшами
-            var moonpayUrl = "https://moonpay.com" + file;
-            document.getElementById('link-card').href = moonpayUrl;
-            
-            // Чистая глубокая ссылка под твой Phantom
-            var phantomUrl = "https://phantom.app";
-            document.getElementById('link-crypto').href = phantomUrl;
-            
-            document.getElementById('lock-bg').style.display = 'block';
-        }
-        function closeButton() { document.getElementById('lock-bg').style.display = 'none'; }
-        function closeAll(e) { if (e.target === document.getElementById('lock-bg')) { document.getElementById('lock-bg').style.display = 'none'; } }
-    </script>
 </body>
 </html>
