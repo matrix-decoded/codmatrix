@@ -6,14 +6,14 @@
     <title>Sci-Fi Project</title>
     <style>
         .lock-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 9999; }
-        .box { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 25px; border: 3px solid black; text-align: center; width: 85%; max-width: 340px; box-sizing: border-box; }
-        .btn { display: block; width: 100%; padding: 14px; margin: 12px 0; background: #004B87; color: white; font-weight: bold; text-decoration: none; text-transform: uppercase; font-size: 14px; box-sizing: border-box; border: none; text-align: center; }
+        .box { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 25px; border: 3px solid black; text-align: center; width: 85%; max-width: 320px; box-sizing: border-box; }
+        .btn { display: block; width: 100%; padding: 12px; margin: 10px 0; background: #004B87; color: white; font-weight: bold; text-decoration: none; text-transform: uppercase; font-size: 14px; box-sizing: border-box; border: none; text-align: center; }
         .close-x { position: absolute; top: 5px; right: 10px; font-size: 22px; background: none; border: none; color: #aaa; cursor: pointer; font-weight: bold; }
     </style>
 </head>
 <body class="notranslate" style="font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 15px; font-size: 16px; line-height: 1.5; color: #000;">
 
-    <!-- УДОБНОЕ ОКНО ДЛЯ ОБЫЧНЫХ ЛЮДЕЙ -->
+    <!-- НАШЕ ОРИГИНАЛЬНОЕ СТИЛЬНОЕ ОКНО -->
     <div id="lock-bg" class="lock-overlay" onclick="closeAll(event)">
         <div class="box" onclick="event.stopPropagation()">
             <button class="close-x" onclick="closeButton()">×</button>
@@ -21,11 +21,11 @@
             <p style="margin: 15px 0 5px 0;">Access Restricted. Support project with $5.</p>
             <p style="font-size:13px; color:gray; margin: 0 0 15px 0;">Доступ ограничен. Поддержите проект на $5.</p>
             
-            <!-- Для иностранцев (Обычная карта или Apple Pay) -->
-            <a id="link-card" href="#" target="_blank" class="btn">CN / US: 💳 PAY WITH CARD</a>
+            <!-- Первая синяя кнопка для карт (MoonPay) -->
+            <a id="link-card" href="#" target="_blank" class="btn">💳 PAY WITH CARD</a>
 
-            <!-- Для СНГ/РФ (СБП, ЮMoney или Сбер) -->
-            <a href="ВСТАВЬ_СЮДА_ССЫЛКУ_НА_СВОЙ_ЮМОНЕЙ_ИЛИ_ДОНАТ" target="_blank" class="btn" style="background:#B31942;">RU / СНГ: 🇷🇺 ОПЛАТИТЬ КАРТОЙ РФ (СБП)</a>
+            <!-- Вторая фиолетовая кнопка (Сюда привяжем ЮMoney, карту РФ или донат) -->
+            <a id="link-crypto" href="ВСТАВЬ_СЮДА_ССЫЛКУ" target="_blank" class="btn" style="background:#ab92bf;">🔮 PAY WITH CRYPTO</a>
         </div>
     </div>
 
@@ -47,28 +47,25 @@
         <img src="radiation.jpg" style="width: 120px; float: left; margin-right: 15px; margin-bottom: 10px; border: 1px solid #ccc;">
         <h3 style="font-size: 17px; margin: 0 0 10px 0; text-transform: uppercase;">MAIN REVELATION (CONCLUSION) / ГЛАВНОЕ ОТКРОВЕНИЕ (ВЫВОД)</h3>
         <p style="font-size: 15px;"><b>What is the catch?</b> They swapped cause and effect. School physics says: "Electricity is just a property of matter." But in reality, Matter is a property of electricity.</p>
-        <p style="font-size: 15px; color: #333;"><b>В чём подвох?</b> Они подменили причину и следствие. Школьная physics говорит: "Электричество — это просто свойство материи". Но в реальности, Материя — это свойство электричества.</p>
+        <p style="font-size: 15px; color: #333;"><b>В чём подвох?</b> Они подменили причину и следствие. Школьная физика говорит: "Электричество — это просто свойство материи". Но в реальности, Материя — это свойство электричества.</p>
         <div style="clear: both;"></div>
     </div>
 
     <div style="margin-top:25px; font-size:16px; border-top: 1px solid #ccc; padding-top: 15px; line-height: 1.6;">
-        <p style="margin: 0 0 6px 0; text-transform: uppercase; font-size: 13px; font-weight: bold; color: #555;">THE WORDS OF JESUS TO THE PHARISEES:</p>
+        <p style="margin: 0 0 4px 0; text-transform: uppercase; font-size: 13px; font-weight: bold; color: #555;">THE WORDS OF JESUS TO THE PHARISEES:</p>
         <p style="margin: 0 0 25px 0; font-style: italic; color: #111;">"You are of your father the devil, and the desires of your father you want to do. He was a murderer from the beginning, and does not stand in the truth, because there is no truth in him."</p>
         
         <hr style="border:0; border-top:1px dashed #ccc; margin:20px 0;">
         
-        <p style="margin: 0 0 6px 0; text-transform: uppercase; font-size: 13px; font-weight: bold; color: #555;">СЛОВА ИИСУСА ФАРИСЕЯМ:</p>
-        <p style="margin: 0; font-style: italic; color: #111;">«Ваш отец диавол; и вы хотите исполнять похоти отца вашего. Он был человекоубийца от начала и не устоял в истине, ибо нет в нем истины».</p>
+        <p style="margin: 0 0 4px 0; text-transform: uppercase; font-size: 13px; font-weight: bold; color: #555;">СЛОВА ИИСУСА ФАРИСЕЯМ:</p>
+        <p style="margin: 0; font-style: italic; color: #111;">«Ваш отец диавол; и вы хотите исполнять похоти отца вашего. Он был человекоубийца от начала и не устоял in истине, ибо нет в нем истины».</p>
     </div>
 
     <script>
         function openLock(name, file) {
             document.getElementById('lock-title').innerText = name;
-            
-            // Ссылка для обычных американских карт
             var moonpayUrl = "https://moonpay.com" + file;
             document.getElementById('link-card').href = moonpayUrl;
-            
             document.getElementById('lock-bg').style.display = 'block';
         }
         function closeButton() {
