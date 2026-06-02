@@ -13,7 +13,7 @@
 </head>
 <body class="notranslate" style="font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 15px; font-size: 16px; line-height: 1.5; color: #000;">
 
-    <!-- НАШЕ УМНОЕ ОКНО БЛОКИРОВКИ -->
+    <!-- УДОБНОЕ ОКНО ДЛЯ ОБЫЧНЫХ ЛЮДЕЙ -->
     <div id="lock-bg" class="lock-overlay" onclick="closeAll(event)">
         <div class="box" onclick="event.stopPropagation()">
             <button class="close-x" onclick="closeButton()">×</button>
@@ -21,11 +21,11 @@
             <p style="margin: 15px 0 5px 0;">Access Restricted. Support project with $5.</p>
             <p style="font-size:13px; color:gray; margin: 0 0 15px 0;">Доступ ограничен. Поддержите проект на $5.</p>
             
-            <!-- Прямая ссылка на оплату картой -->
-            <a id="link-card" href="#" target="_blank" class="btn">💳 PAY WITH CARD (APPLE PAY)</a>
+            <!-- Для иностранцев (Обычная карта или Apple Pay) -->
+            <a id="link-card" href="#" target="_blank" class="btn">CN / US: 💳 PAY WITH CARD</a>
 
-            <!-- Универсальная Web3 ссылка под любой криптокошелек -->
-            <a id="link-crypto" href="#" target="_blank" class="btn" style="background:#ab92bf;">🔮 PAY WITH CRYPTO</a>
+            <!-- Для СНГ/РФ (СБП, ЮMoney или Сбер) -->
+            <a href="ВСТАВЬ_СЮДА_ССЫЛКУ_НА_СВОЙ_ЮМОНЕЙ_ИЛИ_ДОНАТ" target="_blank" class="btn" style="background:#B31942;">RU / СНГ: 🇷🇺 ОПЛАТИТЬ КАРТОЙ РФ (СБП)</a>
         </div>
     </div>
 
@@ -47,7 +47,7 @@
         <img src="radiation.jpg" style="width: 120px; float: left; margin-right: 15px; margin-bottom: 10px; border: 1px solid #ccc;">
         <h3 style="font-size: 17px; margin: 0 0 10px 0; text-transform: uppercase;">MAIN REVELATION (CONCLUSION) / ГЛАВНОЕ ОТКРОВЕНИЕ (ВЫВОД)</h3>
         <p style="font-size: 15px;"><b>What is the catch?</b> They swapped cause and effect. School physics says: "Electricity is just a property of matter." But in reality, Matter is a property of electricity.</p>
-        <p style="font-size: 15px; color: #333;"><b>В чём подвох?</b> Они подменили причину и следствие. Школьная физика говорит: "Электричество — это просто свойство материи". Но в реальности, Материя — это свойство электричества.</p>
+        <p style="font-size: 15px; color: #333;"><b>В чём подвох?</b> Они подменили причину и следствие. Школьная physics говорит: "Электричество — это просто свойство материи". Но в реальности, Материя — это свойство электричества.</p>
         <div style="clear: both;"></div>
     </div>
 
@@ -65,13 +65,9 @@
         function openLock(name, file) {
             document.getElementById('lock-title').innerText = name;
             
-            // Настройка ссылки для Карт (MoonPay)
+            // Ссылка для обычных американских карт
             var moonpayUrl = "https://moonpay.com" + file;
             document.getElementById('link-card').href = moonpayUrl;
-            
-            // Настройка ссылки для Крипты (Solana Pay протокол под любой кошелек)
-            var cryptoUrl = "solana:0xee335a2cfea728917e6acd38e42f8603e6f38a25?amount=5&spl-token=EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v";
-            document.getElementById('link-crypto').href = cryptoUrl;
             
             document.getElementById('lock-bg').style.display = 'block';
         }
