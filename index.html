@@ -20,7 +20,7 @@
             <p style="margin: 15px 0 5px 0;">Access Restricted. Support project with $5.</p>
             <p style="font-size:13px; color:gray; margin: 0 0 15px 0;">Доступ ограничен. Поддержите проект на $5.</p>
             
-            <!-- Кнопка MoonPay -->
+            <!-- Ссылка собрана вручную без скриптов: параметры цены (5) и твой кошелек прописаны намертво -->
             <a id="link-card" href="#" target="_blank" class="btn">💳 PAY WITH CARD</a>
         </div>
     </div>
@@ -30,7 +30,9 @@
         <h2 style="font-weight: 900; font-size: 22px; text-transform: uppercase; letter-spacing: -1px; margin: 0 0 5px 0;">Sci-Fi Philosophical Project</h2>
         <div style="font-size: 13px; color: #555; text-transform: uppercase; font-weight: bold;">Научно-фантастический философский проект</div>
     </div>
-        <div style="margin: 20px 0; font-size: 16px; line-height: 1.8;">
+    
+    <!-- МЕНЮ ГЛАВ -->
+    <div style="margin: 20px 0; font-size: 16px; line-height: 1.8;">
         <a href="index.html" style="color: #004B87; text-decoration: none; font-weight: bold;">Home / Главная</a> | 
         <a href="wallet.html" style="color: #ab92bf; font-weight: bold; text-decoration: none;">[ CRYPTO DONATE ]</a>
         <div style="margin-top: 5px; color: #444;">Chapters / Главы: 
@@ -41,6 +43,7 @@
         </div>
     </div>
 
+    <!-- БЛОК С ОБТЕКАНИЕМ КАРТИНКИ -->
     <div style="margin-top: 25px; border-top: 1px solid #ccc; padding-top: 20px;">
         <img src="radiation.jpg" style="width: 120px; float: left; margin-right: 15px; margin-bottom: 10px; border: 1px solid #ccc;">
         <h3 style="font-size: 17px; margin: 0 0 10px 0; text-transform: uppercase;">MAIN REVELATION (CONCLUSION) / ГЛАВНОЕ ОТКРОВЕНИЕ (ВЫВОД)</h3>
@@ -49,6 +52,7 @@
         <div style="clear: both;"></div>
     </div>
 
+    <!-- ЦИТАТА ИИСУСА -->
     <div style="margin-top:25px; font-size:16px; border-top: 1px solid #ccc; padding-top: 15px; line-height: 1.6;">
         <p style="margin: 0 0 4px 0; text-transform: uppercase; font-size: 13px; font-weight: bold; color: #555;">THE WORDS OF JESUS TO THE PHARISEES:</p>
         <p style="margin: 0 0 25px 0; font-style: italic; color: #111;">"You are of your father the devil, and the desires of your father you want to do. He was a murderer from the beginning, and does not stand in the truth, because there is no truth in him."</p>
@@ -58,22 +62,17 @@
     </div>
 
     <script>
-        var realWalletAddress = "";
-
-        fetch('key.txt')
-            .then(response => response.text())
-            .then(text => { realWalletAddress = text.trim(); })
-            .catch(err => console.error("Error loading key source:", err));
-
         function openLock(name, targetFile) {
             document.getElementById('lock-title').innerText = name;
             
-            if(realWalletAddress) {
-                // Вставлен официальный публичный ключ гостевого виджета MoonPay
-                var gatewayUrl = "https://moonpay.com" + realWalletAddress + "&redirectUrl=https://github.io" + targetFile;
-                document.getElementById('link-card').href = gatewayUrl;
-            }
-            
+            // Ссылка теперь собирается по строгим правилам интернет-адресов со всеми знаками "?" и "&"
+            var fullUrl = "https://moonpay.com" +
+                           "&currencyCode=usdc_base" +
+                           "&baseCurrencyAmount=5" +
+                           "&walletAddress=0x278392b21634Dc226D46A9eA64e698CD35bE608c" +
+                           "&redirectUrl=https://github.io" + targetFile;
+                           
+            document.getElementById('link-card').href = fullUrl;
             document.getElementById('lock-bg').style.display = 'block';
         }
         function closeButton() { document.getElementById('lock-bg').style.display = 'none'; }
