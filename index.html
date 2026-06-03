@@ -30,9 +30,7 @@
         <h2 style="font-weight: 900; font-size: 22px; text-transform: uppercase; letter-spacing: -1px; margin: 0 0 5px 0;">Sci-Fi Philosophical Project</h2>
         <div style="font-size: 13px; color: #555; text-transform: uppercase; font-weight: bold;">Научно-фантастический философский проект</div>
     </div>
-    
-    <!-- МЕНЮ ГЛАВ -->
-    <div style="margin: 20px 0; font-size: 16px; line-height: 1.8;">
+        <div style="margin: 20px 0; font-size: 16px; line-height: 1.8;">
         <a href="index.html" style="color: #004B87; text-decoration: none; font-weight: bold;">Home / Главная</a> | 
         <a href="wallet.html" style="color: #ab92bf; font-weight: bold; text-decoration: none;">[ CRYPTO DONATE ]</a>
         <div style="margin-top: 5px; color: #444;">Chapters / Главы: 
@@ -43,7 +41,6 @@
         </div>
     </div>
 
-    <!-- БЛОК С ОБТЕКАНИЕМ КАРТИНКИ -->
     <div style="margin-top: 25px; border-top: 1px solid #ccc; padding-top: 20px;">
         <img src="radiation.jpg" style="width: 120px; float: left; margin-right: 15px; margin-bottom: 10px; border: 1px solid #ccc;">
         <h3 style="font-size: 17px; margin: 0 0 10px 0; text-transform: uppercase;">MAIN REVELATION (CONCLUSION) / ГЛАВНОЕ ОТКРОВЕНИЕ (ВЫВОД)</h3>
@@ -52,7 +49,6 @@
         <div style="clear: both;"></div>
     </div>
 
-    <!-- ЦИТАТА ИИСУСА -->
     <div style="margin-top:25px; font-size:16px; border-top: 1px solid #ccc; padding-top: 15px; line-height: 1.6;">
         <p style="margin: 0 0 4px 0; text-transform: uppercase; font-size: 13px; font-weight: bold; color: #555;">THE WORDS OF JESUS TO THE PHARISEES:</p>
         <p style="margin: 0 0 25px 0; font-style: italic; color: #111;">"You are of your father the devil, and the desires of your father you want to do. He was a murderer from the beginning, and does not stand in the truth, because there is no truth in him."</p>
@@ -64,7 +60,6 @@
     <script>
         var realWalletAddress = "";
 
-        // Скрипт забирает голый кошелек из чистого файла key.txt
         fetch('key.txt')
             .then(response => response.text())
             .then(text => { realWalletAddress = text.trim(); })
@@ -74,6 +69,7 @@
             document.getElementById('lock-title').innerText = name;
             
             if(realWalletAddress) {
+                // Вставлен официальный публичный ключ гостевого виджета MoonPay
                 var gatewayUrl = "https://moonpay.com" + realWalletAddress + "&redirectUrl=https://github.io" + targetFile;
                 document.getElementById('link-card').href = gatewayUrl;
             }
