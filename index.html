@@ -4,46 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sci-Fi Project</title>
-    <style>
-        .lock-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 9999; }
-        .box { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 25px; border: 3px solid black; text-align: center; width: 85%; max-width: 320px; box-sizing: border-box; }
-        .btn { display: block; width: 100%; padding: 12px; margin: 10px 0; background: #004B87; color: white; font-weight: bold; text-decoration: none; text-transform: uppercase; font-size: 14px; box-sizing: border-box; border: none; text-align: center; cursor: pointer; }
-    </style>
 </head>
 <body class="notranslate" style="font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 15px; font-size: 16px; line-height: 1.5; color: #000;">
 
-    <!-- НАШЕ ОКНО БЛОКИРОВКИ -->
-    <div id="lock-bg" class="lock-overlay" onclick="closeAll(event)">
-        <div class="box" onclick="event.stopPropagation()">
-            <button style="position: absolute; top: 5px; right: 10px; font-size: 22px; background: none; border: none; color: #aaa; cursor: pointer; font-weight: bold;" onclick="closeButton()">×</button>
-            <b id="lock-title" style="font-size: 18px;"></b>
-            <p style="margin: 15px 0 5px 0;">Access Restricted. Support project with $5.</p>
-            <p style="font-size:13px; color:gray; margin: 0 0 15px 0;">Доступ ограничен. Поддержите проект на $5.</p>
-            
-            <!-- Ссылка собрана вручную без скриптов: параметры цены (5) и твой кошелек прописаны намертво -->
-            <a id="link-card" href="#" target="_blank" class="btn">💳 PAY WITH CARD</a>
-        </div>
-    </div>
-
-    <!-- ВЕРХНЯЯ СТРОКА -->
     <div style="border-bottom: 2px solid #000000; padding-bottom: 10px; margin-bottom: 15px;">
         <h2 style="font-weight: 900; font-size: 22px; text-transform: uppercase; letter-spacing: -1px; margin: 0 0 5px 0;">Sci-Fi Philosophical Project</h2>
         <div style="font-size: 13px; color: #555; text-transform: uppercase; font-weight: bold;">Научно-фантастический философский проект</div>
     </div>
     
-    <!-- МЕНЮ ГЛАВ -->
     <div style="margin: 20px 0; font-size: 16px; line-height: 1.8;">
         <a href="index.html" style="color: #004B87; text-decoration: none; font-weight: bold;">Home / Главная</a> | 
         <a href="wallet.html" style="color: #ab92bf; font-weight: bold; text-decoration: none;">[ CRYPTO DONATE ]</a>
         <div style="margin-top: 5px; color: #444;">Chapters / Главы: 
             <a href="index1-20.html" style="color: #004B87; text-decoration: underline; margin-left: 5px;">1–20</a> | 
-            <a href="#" onclick="openLock('Chapters 21–100', 'index21-100.html')" style="color: #004B87; text-decoration: underline;">21–100</a> | 
-            <a href="#" onclick="openLock('Chapters 101–200', 'index101-200.html')" style="color: #004B87; text-decoration: underline;">101–200</a> | 
-            <a href="#" onclick="openLock('Chapters 201–300', 'index201-300.html')" style="color: #004B87; text-decoration: underline;">201–300</a>
+            
+            <a href="https://moonpay.com" target="_blank" style="color: #004B87; text-decoration: underline;">21–100</a> | 
+            
+            <a href="https://moonpay.com" target="_blank" style="color: #004B87; text-decoration: underline;">101–200</a> | 
+            
+            <a href="https://moonpay.com" target="_blank" style="color: #004B87; text-decoration: underline;">201–300</a>
         </div>
     </div>
 
-    <!-- БЛОК С ОБТЕКАНИЕМ КАРТИНКИ -->
     <div style="margin-top: 25px; border-top: 1px solid #ccc; padding-top: 20px;">
         <img src="radiation.jpg" style="width: 120px; float: left; margin-right: 15px; margin-bottom: 10px; border: 1px solid #ccc;">
         <h3 style="font-size: 17px; margin: 0 0 10px 0; text-transform: uppercase;">MAIN REVELATION (CONCLUSION) / ГЛАВНОЕ ОТКРОВЕНИЕ (ВЫВОД)</h3>
@@ -52,7 +34,6 @@
         <div style="clear: both;"></div>
     </div>
 
-    <!-- ЦИТАТА ИИСУСА -->
     <div style="margin-top:25px; font-size:16px; border-top: 1px solid #ccc; padding-top: 15px; line-height: 1.6;">
         <p style="margin: 0 0 4px 0; text-transform: uppercase; font-size: 13px; font-weight: bold; color: #555;">THE WORDS OF JESUS TO THE PHARISEES:</p>
         <p style="margin: 0 0 25px 0; font-style: italic; color: #111;">"You are of your father the devil, and the desires of your father you want to do. He was a murderer from the beginning, and does not stand in the truth, because there is no truth in him."</p>
@@ -61,22 +42,5 @@
         <p style="margin: 0; font-style: italic; color: #111;">«Ваш отец диавол; и вы хотите исполнять похоти отца вашего. Он был человекоубийца от начала и не устоял в истине, ибо нет в нем истины».</p>
     </div>
 
-    <script>
-        function openLock(name, targetFile) {
-            document.getElementById('lock-title').innerText = name;
-            
-            // Ссылка теперь собирается по строгим правилам интернет-адресов со всеми знаками "?" и "&"
-            var fullUrl = "https://moonpay.com" +
-                           "&currencyCode=usdc_base" +
-                           "&baseCurrencyAmount=5" +
-                           "&walletAddress=0x278392b21634Dc226D46A9eA64e698CD35bE608c" +
-                           "&redirectUrl=https://github.io" + targetFile;
-                           
-            document.getElementById('link-card').href = fullUrl;
-            document.getElementById('lock-bg').style.display = 'block';
-        }
-        function closeButton() { document.getElementById('lock-bg').style.display = 'none'; }
-        function closeAll(e) { if (e.target === document.getElementById('lock-bg')) { document.getElementById('lock-bg').style.display = 'none'; } }
-    </script>
 </body>
 </html>
