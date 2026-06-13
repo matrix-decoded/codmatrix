@@ -17,7 +17,8 @@
         <a href="wallet.html" style="color: #ab92bf; font-weight: bold; text-decoration: none;">[ CRYPTO DONATE ]</a>
         
         <div style="margin-top: 5px; color: #444;">Chapters / Главы:
-            <a href="https://paragraph.com" target="_blank" style="color: #E64A19; text-decoration: underline; font-weight: bold; margin-left: 5px;">1–300 ➔</a>
+            <!-- Динамическая ссылка, которая теперь привязана к файлу index1-300.html -->
+            <a href="#" id="dynamic-link" target="_blank" style="color: #E64A19; text-decoration: underline; font-weight: bold; margin-left: 5px;">1–300 ➔</a>
         </div>
     </div>
 
@@ -42,6 +43,36 @@
         <p style="margin: 0 0 4px 0; text-transform: uppercase; font-size: 13px; font-weight: bold; color: #555;">СЛОВА ИИСУСА ФАРИСЕЯМ:</p>
         <p style="margin: 0; font-style: italic; color: #111;">«Ваш отец диавол; и вы хотите исполнять похоти отца вашего. Он был человекоубийца от начала и не устоял в истине, ибо нет в нем истины».</p>
     </div>
+
+    <!-- Скрипт теперь обращается к обновленному файлу index1-300.html -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('index1-300.html')
+                .then(response => response.text())
+                .then(data => {
+                    let parser = new DOMParser();
+                    let doc = parser.parseFromString(data, 'text/html');
+                    
+                    // Ищем текст ссылки внутри файла index1-300.html
+                    let foundElement = doc.querySelector('p') || doc.querySelector('a') || doc.body;
+                    
+                    if (foundElement) {
+                        let targetUrl =
+                            foundElement.textContent.trim();
+                        
+                        if (!targetUrl.startsWith('http') && doc.querySelector('a')) {
+                            targetUrl = doc.querySelector('a').getAttribute('href');
+                        }
+                        
+                        // Если ссылка найдена, подставляем её в кнопку
+                        if (targetUrl && (targetUrl.startsWith('http') || targetUrl.startsWith('https'))) {
+                            document.getElementById('dynamic-link').setAttribute('href', targetUrl);
+                        }
+                    }
+                })
+                .catch(error => console.error('Ошибка загрузки ссылки:', error));
+        });
+    </script>
 
 </body>
 </html>
