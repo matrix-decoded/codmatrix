@@ -17,10 +17,8 @@
         <a href="wallet.html" style="color: #ab92bf; font-weight: bold; text-decoration: none;">[ CRYPTO DONATE ]</a>
         
         <div style="margin-top: 5px; color: #444;">Chapters / Главы:
-            <!-- Первая ссылка: строго синие цифры 1–5 без лишнего текста -->
-            <a href="index1-5.html" style="color: #004B87; text-decoration: underline; font-weight: bold; margin-left: 5px; margin-right: 10px;">1–5</a>
-            
-            <!-- Вторая ссылка: строго синие цифры 1–300 без стрелочек -->
+            <!-- Две чистые синие ссылки без лишних слов -->
+            <a href="index1-5.html" style="color: #004B87; text-decoration: underline; font-weight: bold; margin-left: 5px; margin-right: 15px;">1–5</a>
             <a href="#" id="dynamic-link" target="_blank" style="color: #004B87; text-decoration: underline; font-weight: bold;">1–300</a>
         </div>
     </div>
@@ -48,32 +46,23 @@
     </div>
 
     <!-- ================================================================= -->
-    <!-- ПОЛЕ ДЛЯ ВСТАВКИ ВАШЕГО ТЕКСТА (ГЛАВЫ ЦЕЛИКОМ) -->
+    <!-- ОДНО ПОЛЕ ДЛЯ ТЕКСТА ГЛАВЫ ЦЕЛИКОМ -->
     <!-- ================================================================= -->
-    <div style="margin-top: 30px; border-top: 2px solid #000000; padding-top: 20px; font-size: 16px; line-height: 1.7;">
+    <div style="margin-top: 30px; border-top: 2px solid #000000; padding-top: 20px; font-size: 16px; line-height: 1.7; white-space: pre-line;">
         
         <h3 style="font-size: 18px; margin: 0 0 15px 0; text-transform: uppercase; color: #000;">
-            FEATURED CHAPTER / ПУБЛИК
-            АЦИЯ ГЛАВЫ В ЦЕЛИКОМ
+            FEATURED CHAPTER / ПУБЛИКАЦИЯ ГЛАВЫ
         </h3>
-        
-        <!-- НАЧАЛО МЕСТА ДЛЯ ВАШЕГО ТЕКСТА -->
-        <!-- Ниже вы удаляете этот текст и вставляете текст своей главы -->
-        
-        <p style="margin: 0 0 15px 0;">
-            Здесь будет находиться текст вашей главы, который вы вставите самостоятельно в коде файла index.html. Вы можете писать сюда текст на английском или русском языках.
+        ЭТИМИ ДВУМЯ ТЕГАМИ <p> И </p> -->
+        <p style="margin: 0;">
+            Удалите этот текст и вставьте сюда всю вашу главу целиком. 
+            Благодаря команде "white-space: pre-line" все ваши абзацы и отступы сохранятся автоматически, как в обычном Ворде.
         </p>
-        
-        <p style="margin: 0 0 15px 0;">
-            Каждый новый абзац просто оборачивайте в теги &lt;p&gt; текст &lt;/p&gt;. Текст автоматически растянется по ширине сайта и будет выглядеть строго и красиво.
-        </p>
-
-        <!-- КОНЕЦ МЕСТА ДЛЯ ВАШЕГО ТЕКСТА -->
 
     </div>
     <!-- ================================================================= -->
 
-    <!-- Скрипт автоматического поиска ссылки в файле index1-300.html -->
+    <!-- Скрипт автоматического поиска ссылки -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             fetch('index1-300.html')
@@ -98,3 +87,4 @@
 
 </body>
 </html>
+        <!-- ВСТАВЛЯЙТЕ ВСЮ СВОЮ ГЛАВУ ЦЕЛИКОМ СТРОГО МЕЖДУ
