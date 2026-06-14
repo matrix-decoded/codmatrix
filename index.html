@@ -17,8 +17,11 @@
         <a href="wallet.html" style="color: #ab92bf; font-weight: bold; text-decoration: none;">[ CRYPTO DONATE ]</a>
         
         <div style="margin-top: 5px; color: #444;">Chapters / Главы:
-            <!-- Динамическая ссылка, которая теперь привязана к файлу index1-300.html -->
-            <a href="#" id="dynamic-link" target="_blank" style="color: #E64A19; text-decoration: underline; font-weight: bold; margin-left: 5px;">1–300 ➔</a>
+            <!-- Первая ссылка: строго синие цифры 1–5 без лишнего текста -->
+            <a href="index1-5.html" style="color: #004B87; text-decoration: underline; font-weight: bold; margin-left: 5px; margin-right: 10px;">1–5</a>
+            
+            <!-- Вторая ссылка: строго синие цифры 1–300 без стрелочек -->
+            <a href="#" id="dynamic-link" target="_blank" style="color: #004B87; text-decoration: underline; font-weight: bold;">1–300</a>
         </div>
     </div>
 
@@ -44,7 +47,33 @@
         <p style="margin: 0; font-style: italic; color: #111;">«Ваш отец диавол; и вы хотите исполнять похоти отца вашего. Он был человекоубийца от начала и не устоял в истине, ибо нет в нем истины».</p>
     </div>
 
-    <!-- Скрипт теперь обращается к обновленному файлу index1-300.html -->
+    <!-- ================================================================= -->
+    <!-- ПОЛЕ ДЛЯ ВСТАВКИ ВАШЕГО ТЕКСТА (ГЛАВЫ ЦЕЛИКОМ) -->
+    <!-- ================================================================= -->
+    <div style="margin-top: 30px; border-top: 2px solid #000000; padding-top: 20px; font-size: 16px; line-height: 1.7;">
+        
+        <h3 style="font-size: 18px; margin: 0 0 15px 0; text-transform: uppercase; color: #000;">
+            FEATURED CHAPTER / ПУБЛИК
+            АЦИЯ ГЛАВЫ В ЦЕЛИКОМ
+        </h3>
+        
+        <!-- НАЧАЛО МЕСТА ДЛЯ ВАШЕГО ТЕКСТА -->
+        <!-- Ниже вы удаляете этот текст и вставляете текст своей главы -->
+        
+        <p style="margin: 0 0 15px 0;">
+            Здесь будет находиться текст вашей главы, который вы вставите самостоятельно в коде файла index.html. Вы можете писать сюда текст на английском или русском языках.
+        </p>
+        
+        <p style="margin: 0 0 15px 0;">
+            Каждый новый абзац просто оборачивайте в теги &lt;p&gt; текст &lt;/p&gt;. Текст автоматически растянется по ширине сайта и будет выглядеть строго и красиво.
+        </p>
+
+        <!-- КОНЕЦ МЕСТА ДЛЯ ВАШЕГО ТЕКСТА -->
+
+    </div>
+    <!-- ================================================================= -->
+
+    <!-- Скрипт автоматического поиска ссылки в файле index1-300.html -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             fetch('index1-300.html')
@@ -52,19 +81,12 @@
                 .then(data => {
                     let parser = new DOMParser();
                     let doc = parser.parseFromString(data, 'text/html');
-                    
-                    // Ищем текст ссылки внутри файла index1-300.html
                     let foundElement = doc.querySelector('p') || doc.querySelector('a') || doc.body;
-                    
                     if (foundElement) {
-                        let targetUrl =
-                            foundElement.textContent.trim();
-                        
+                        let targetUrl = foundElement.textContent.trim();
                         if (!targetUrl.startsWith('http') && doc.querySelector('a')) {
                             targetUrl = doc.querySelector('a').getAttribute('href');
                         }
-                        
-                        // Если ссылка найдена, подставляем её в кнопку
                         if (targetUrl && (targetUrl.startsWith('http') || targetUrl.startsWith('https'))) {
                             document.getElementById('dynamic-link').setAttribute('href', targetUrl);
                         }
